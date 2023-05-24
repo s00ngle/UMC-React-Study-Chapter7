@@ -1,7 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useRef, useState } from "react";
 import { add_todo } from "./action";
-import "./InputForm.css";
+// import "./InputForm.css";
+import * as S from "./InputForm.styles";
 
 const InputForm = () => {
     const dispatch = useDispatch();
@@ -34,8 +35,8 @@ const InputForm = () => {
     };
 
     return (
-        <div className="InputForm-Container">
-            <input
+        <S.Container>
+            <S.InputBox
                 ref={textinput}
                 className="InputForm-InputBox"
                 type="text"
@@ -44,10 +45,8 @@ const InputForm = () => {
                 onChange={handleChange}
                 onKeyDown={handleKeyPress}
             />
-            <button className="InputForm-Button" onClick={handleClick}>
-                +
-            </button>
-        </div>
+            <S.Button onClick={handleClick}>+</S.Button>
+        </S.Container>
     );
 };
 
